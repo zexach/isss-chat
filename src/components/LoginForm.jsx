@@ -24,16 +24,20 @@ const LoginForm = (props) => {
                         onChange={(e) => setEmail(e.target.value)} 
                         className="form__input__email" 
                         type="email" 
-                        placeholder="example@mail.com" />
+                        placeholder="example@mail.com"
+                        value={email}
+                        required />
                 </div>
                 <div className="form__input">
                     <label htmlFor="form__input__password">Password</label>
                     <input
                         onChange={(e) => setPassword(e.target.value)}
                         className="form__input__password"
-                        type="password" />
+                        type="password"
+                        value={password}
+                        required />
                 </div>
-                <button type="submit">Login</button>
+                <button className="form__button" type="submit">Login</button>
             </div>
         </form>
         </>

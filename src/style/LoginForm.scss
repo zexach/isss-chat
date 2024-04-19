@@ -11,6 +11,17 @@
         display: flex;
         flex-direction: column;
     }
+    &__button{
+        padding: 0.5rem;
+        background-color: #fff;
+        color: #000;
+        cursor: pointer;
+        transition: 0.3s;
+        &:hover{
+            color: #fff;
+            background-color: #000;
+        }
+    }
 }
 
 input{
