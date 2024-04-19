@@ -1,8 +1,7 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import './style/App.scss'
 import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
-import { useAuth } from './hooks/AuthProvider.jsx'
 import AuthProvider from './hooks/AuthProvider.jsx'
 import PrivateRoute from './router/PrivateRoute.jsx'
 
@@ -10,16 +9,18 @@ const App = () => {
 
     return (
         <>
-            <AuthProvider>
                 <Router>
+            <AuthProvider>
                     <Routes>
                         <Route path='/login' element={<LoginPage />} />
                         <Route element={<PrivateRoute />}>
+                            <Route path='*' element={<Navigate to='/dashboard' replace />} />
                             <Route path='/dashboard' element={<Dashboard />} />
                         </Route>
+
                     </Routes>
-                </Router>
             </AuthProvider>
+                </Router>
         </>
     )
 }

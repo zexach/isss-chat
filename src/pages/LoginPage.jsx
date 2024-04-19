@@ -1,12 +1,30 @@
 import React from "react";
 import LoginForm from "../components/LoginForm";
 import '../style/LoginPage.scss'
+import { useAuth } from "../hooks/AuthProvider";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
 
+    const auth = useAuth();
+    const navigate = useNavigate();
+
     const handleLoginData = (email, password) => {
-        console.log(email + " " + password);
+        const loginData = {
+            email: email,
+            password: password
+        }
+
+        auth.handleLogin(loginData);
     }
+
+    useEffect(() => {
+        const token = localStorage.getItem('token');
+        if (token && token !== null){
+            navigate('/dashboard');
+        }
+    }, []);
 
     return(
         <>
