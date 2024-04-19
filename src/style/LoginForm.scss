@@ -1,0 +1,21 @@
+.form{
+    width: fit-content;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid #000;
+    &__input{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+input{
+    padding: 0.5rem;
+}
+input:focus{
+    outline: none;
+}
