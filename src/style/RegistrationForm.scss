@@ -1,15 +1,21 @@
 .form{
-    width: fit-content;
-    padding: 2rem;
+    padding: 2rem;    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     border: 1px solid #000;
-    &__input{
+    &__inputs{
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        gap: 2rem;
+        &__sub{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        }
     }
     &__button{
         padding: 0.5rem;
@@ -29,11 +35,4 @@
             cursor: pointer;
         }
     }
-}
-
-input{
-    padding: 0.5rem;
-}
-input:focus{
-    outline: none;
 }

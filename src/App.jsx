@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage'
 import Dashboard from './pages/Dashboard'
 import AuthProvider from './hooks/AuthProvider.jsx'
 import PrivateRoute from './router/PrivateRoute.jsx'
+import RegistrationPage from './pages/RegistrationPage.jsx'
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
             <AuthProvider>
                     <Routes>
                         <Route path='/login' element={<LoginPage />} />
+                        <Route path='/register' element={<RegistrationPage />} />
                         <Route element={<PrivateRoute />}>
                             <Route path='*' element={<Navigate to='/dashboard' replace />} />
                             <Route path='/dashboard' element={<Dashboard />} />
