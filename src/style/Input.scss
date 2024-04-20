@@ -1,8 +1,12 @@
 .form{
     &__input{
+        width: 200px;
         display: flex;
         flex-direction: column;
         gap: 0.3rem;
+        &__label{
+            font-size: 13px;
+        }
     }
 }
 

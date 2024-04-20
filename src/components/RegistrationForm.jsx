@@ -3,6 +3,7 @@ import { useState } from "react";
 import '../style/RegistrationForm.scss'
 import { useNavigate } from "react-router-dom";
 import Input from "./Input";
+import SelectInput from "./SelectInput";
 
 const RegistrationForm = (props) => {
 
@@ -17,11 +18,29 @@ const RegistrationForm = (props) => {
     const [zipCode, setZipCode] = useState('');
     const [city, setCity] = useState('');
 
-
+    const handleCityPick = (selectedCity) => {
+        setCity(selectedCity);
+        console.log(selectedCity);
+    }
 
     const handleLogin = (event) => {
         event.preventDefault();
-        console.log(fullName + email + password);
+        const userToRegister = {
+            "name": fullName,
+            "email": email,
+            "password": password,
+            "birth": birthDate,
+            "address": {
+                "streetName": streetName,
+                "houseNumber": houseNumber,
+                "zipCode": zipCode
+            },
+            "city": {
+                "name": city
+            }
+        }
+
+        props.onRegistration(userToRegister);
     }
 
     return(
@@ -55,12 +74,7 @@ const RegistrationForm = (props) => {
                             value={birthDate} />
                     </div>
                     <div className="form__inputs__sub">
-                        <Input
-                            setValue={setCity}
-                            label='City'
-                            type='text'
-                            placeholder='ex. Sarajevo'
-                            value={city} />
+                        <SelectInput onCityPick={handleCityPick} cities={props.cities} />
                         <Input
                             setValue={setStreetName}
                             label='Street name'

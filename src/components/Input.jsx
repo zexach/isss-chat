@@ -7,7 +7,7 @@ const Input = (props) => {
     return(
         <>
         <div className="form__input">
-            <label htmlFor="form__input">{props.label}</label>
+            <label className="form__input__label" htmlFor="form__input">{props.label}</label>
             <input 
                 onChange={(e) => props.setValue(e.target.value)} 
                 className="form__input" 
