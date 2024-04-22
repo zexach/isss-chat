@@ -10,9 +10,9 @@ const SelectInput = (props) => {
 
     return(
         <>
-        <div className="form__input">
-            <label className="form__input__label" htmlFor="form__input">{props.label}</label>
-            <select onChange={handleValuePick} className="form__input__select" name="option" required>
+        <div className="select-input">
+            <label className="select-input__label" htmlFor="option">{props.label}</label>
+            <select onChange={handleValuePick} className="select-input__select" name="option" required>
                 { props.values ? 
                     props.values.map(
                         (value) => 

@@ -1,25 +1,28 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import '../style/Input.scss'
 
 const Input = (props) => {
 
-    const [isValid, setIsValid] = useState(false);
+    const [isValid, setIsValid] = useState(true);
 
     return(
         <>
-        <div className="form__input">
-            <label className="form__input__label" htmlFor={props.name}>{props.label}</label>
+        <div className="input-section">
+            <label className="input-section__label" htmlFor={props.name}>{props.label}</label>
             <input 
-                className="form__input" 
-                onChange={(e) => props.setValue(e.target.value)} 
+                className={`input-section__input ${isValid ? '' : 'invalid'} `} 
+                onChange={(e) => props.setValue(e.target.value)}
+                onBlur={(e) => {props.isValid ? setIsValid(props.isValid(e.target.value)) : ''}}
                 name={props.name}
-                type={props.type} 
+                type={props.type}
                 placeholder={props.placeholder}
                 value={props.value}
                 pattern={props.pattern}
                 title={props.title}
+                autoComplete="off"
                 required />
+            { isValid ? '' : <p className="input-section__error">{props.error}</p> }
         </div>
         </>
     );

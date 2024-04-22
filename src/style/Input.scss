@@ -1,19 +1,29 @@
-.form{
+.input-section{
+    width: 300px;
+    min-height: 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    &__label{
+        font-size: 13px;
+    }
     &__input{
-        display: flex;
-        flex-direction: column;
-        gap: 0.3rem;
-        &__label{
-            font-size: 13px;
+        width: 100%;
+        padding: 0.5rem;
+        &:focus{
+            outline: none;
         }
+        &[type=date]{
+            font-family: 'Geologica', sans-serif;
+            font-size: 11px;
+        }
+    }
+    &__error{
+        font-size: 10px;
+        color: #ff0000;
     }
 }
 
-input{
-    padding: 0.5rem;
-    border: 1px solid #000;
+.invalid{
+    border: 1px solid #ff0000;
 }
-input:focus{
-    outline: none;
-}
-

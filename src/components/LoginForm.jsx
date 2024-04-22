@@ -22,7 +22,7 @@ const LoginForm = (props) => {
     return(
         <>
         <form onSubmit={handleLogin}>
-            <div className="form">
+            <div className="login-form">
                 <Input
                     setValue={setEmail}
                     label='Email'
@@ -37,9 +37,9 @@ const LoginForm = (props) => {
                     type='password'
                     placeholder=''
                     value={password} />
-                <button className="form__button" type="submit">Login</button>
-                <p className="form__register">Don't have account? 
-                    <span onClick={() => navigate('/register')} className="form__register__span"> Register now</span>
+                <button className="login-form__button" type="submit">Login</button>
+                <p className="login-form__register">Don't have account? 
+                    <span onClick={() => navigate('/register')} className="login-form__register__span"> Register now</span>
                 </p>
             </div>
         </form>
