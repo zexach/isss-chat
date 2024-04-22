@@ -51,45 +51,56 @@ const RegistrationForm = (props) => {
                         <Input
                             setValue={setFullName}
                             label='Full name'
+                            name='fullName'
                             type='text'
                             placeholder='John Doe'
                             value={fullName} />
                         <Input
                             setValue={setEmail}
                             label='Email'
+                            name='email'
                             type='email'
                             placeholder='example@mail.com'
+                            pattern='[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$'
+                            title='Email must follow the format example@mail.com'
                             value={email} />
                         <Input
                             setValue={setPassword}
                             label='Password'
+                            name='password'
                             type='password'
                             placeholder=''
+                            pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d]).{8,}'
+                            title='Password must contain at least one number and one uppercase and lowercase letter and one special character, and at least 8 or more characters'
                             value={password} />
                         <Input
                             setValue={setBirthDate}
                             label='Date of birth'
+                            name='dateOfBirth'
                             type='date'
                             placeholder=''
                             value={birthDate} />
                     </div>
                     <div className="form__inputs__sub">
-                        <SelectInput onCityPick={handleCityPick} cities={props.cities} />
+                        <SelectInput label='Country' onValuePick={handleCityPick} values={props.cities} />
                         <Input
                             setValue={setStreetName}
                             label='Street name'
+                            name='streetName'
                             type='text'
                             placeholder='ex. Ulica bosanska'
                             value={streetName} />
                         <Input
                             setValue={setHouseNumber}
                             label='House number'
+                            name='houseNumber'
                             type='text'
                             placeholder='ex. 7'
                             value={houseNumber} />
                         <Input
                             setValue={setZipCode}
                             label='Zip code'
+                            name='zipCode'
                             type='text'
                             placeholder='ex. 72000'
                             value={zipCode} />

@@ -26,12 +26,14 @@ const LoginForm = (props) => {
                 <Input
                     setValue={setEmail}
                     label='Email'
+                    name='email'
                     type='email'
                     placeholder='example@mail.com'
                     value={email} />
                 <Input
                     setValue={setPassword}
                     label='Password'
+                    name='password'
                     type='password'
                     placeholder=''
                     value={password} />

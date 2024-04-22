@@ -1,6 +1,5 @@
 .form{
     &__input{
-        width: 200px;
         display: flex;
         flex-direction: column;
         gap: 0.3rem;
@@ -12,9 +11,9 @@
 
 input{
     padding: 0.5rem;
-    border: 2px solid #000;
+    border: 1px solid #000;
 }
 input:focus{
     outline: none;
-    border: 2px solid #2574e3;
 }
+

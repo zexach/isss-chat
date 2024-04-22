@@ -7,38 +7,20 @@
         &__label{
             font-size: 13px;
         }
-    }
-.select{
-    &__tab{
-        width: 200px;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0.5rem;
-        border: 2px solid #000;
-        cursor: pointer;
-        &__type{
-            font-size: 12px;
-            font-weight: 300;
-        }
-    }
-    &__types{
-        width: 200px;
-        position: absolute;
-        height: 200px;
-        overflow-y: auto;
-        z-index: 2;
-        &__city{
-            padding: 1rem;
-            font-size: 12px;
-            background-color: #edebeb;
+        &__select{ 
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem;
+            border: 1px solid #000;
             cursor: pointer;
-            &:hover{
-                background-color: #3c3c3c;
-                color: white;
+            &__type{
+                font-size: 12px;
+                font-weight: 300;
             }
-        }
+        
     }
 }
 }
