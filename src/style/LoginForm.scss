@@ -11,6 +11,10 @@
         font-size: 24px;
         font-weight: 400;
     }
+    &__error{
+        color: #ff0000;
+        font-size: 12px;
+    }
     &__button{
         padding: 0.5rem;
         background-color: #fff;

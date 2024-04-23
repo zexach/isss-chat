@@ -8,6 +8,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [token, setToken] = useState(localStorage.getItem('token') || '');
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -18,7 +19,7 @@ const AuthProvider = ({ children }) => {
             localStorage.setItem('token', response.data.token)
             navigate('/dashboard');
         } catch (e) {
-            console.log(e);
+            setError(e.response.data.token);
         }
     }
 
@@ -33,7 +34,7 @@ const AuthProvider = ({ children }) => {
         }
     }
 
-    return <AuthContext.Provider value={{user, token, handleLogin, handleRegistration}}>{ children }</AuthContext.Provider>
+    return <AuthContext.Provider value={{user, token, error, handleLogin, handleRegistration}}>{ children }</AuthContext.Provider>
 }
 
 export default AuthProvider;

@@ -45,6 +45,7 @@ const LoginForm = (props) => {
                     type='password'
                     placeholder=''
                     value={password} />
+                { props.error ? <p className="login-form__error">{props.error}</p> : '' }
                 <button className="login-form__button" type="submit">Login</button>
                 <p className="login-form__register">Don't have account? 
                     <span onClick={() => navigate('/register')} className="login-form__register__span"> Register now</span>

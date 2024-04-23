@@ -29,7 +29,7 @@ const LoginPage = () => {
     return(
         <>
             <div className="login-page">
-                <LoginForm onLogin={handleLoginData} />
+                <LoginForm onLogin={handleLoginData} error={auth.error} />
             </div>
         </>
     );
