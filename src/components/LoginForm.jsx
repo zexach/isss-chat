@@ -14,15 +14,21 @@ const LoginForm = (props) => {
 
     const handleLogin = (event) => {
         event.preventDefault();
-        props.onLogin(email, password);
-        setEmail('');
-        setPassword('');
+        if (email !== '' && password !== '') {
+            props.onLogin(email, password);
+            setEmail('');
+            setPassword('');
+        }else {
+            console.log('ne more')
+        }
+
     }
 
     return(
         <>
-        <form onSubmit={handleLogin}>
+        <form onSubmit={handleLogin} noValidate>
             <div className="login-form">
+            <h1 className="login-form__header">Login</h1>
                 <Input
                     setValue={setEmail}
                     label='Email'

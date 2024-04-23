@@ -51,6 +51,7 @@ const RegistrationForm = (props) => {
     return(
         <>
             <form className="registration-form" onSubmit={handleLogin} noValidate>
+                <h1 className="registration-form__header">Register</h1>
                 <div className="registration-form__inputs">
                     <div className="registration-form__inputs__sub">
                         <Input
@@ -81,7 +82,7 @@ const RegistrationForm = (props) => {
                             type='password'
                             placeholder=''
                             pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^\w\d]).{8,}'
-                            error='Password must contain at least one number and one uppercase and lowercase letter and one special character, and at least 8 or more characters'
+                            error='Password must include number, uppercase, lowercase, special character, and be at least 8 characters long.'
                             value={password} />
                         <Input
                             setValue={setBirthDate}

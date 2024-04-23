@@ -7,6 +7,10 @@
     align-items: center;
     gap: 1rem;
     border: 1px solid #000;
+    &__header{
+        font-size: 24px;
+        font-weight: 400;
+    }
     &__button{
         padding: 0.5rem;
         background-color: #fff;
