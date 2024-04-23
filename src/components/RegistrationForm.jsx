@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import '../style/RegistrationForm.scss'
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Input from "./Input";
 import SelectInput from "./SelectInput";
 import { NameValidator, EmailValidator, PasswordValidator } from "../validators/Validators";
@@ -9,6 +11,12 @@ import { NameValidator, EmailValidator, PasswordValidator } from "../validators/
 const RegistrationForm = (props) => {
 
     const navigate = useNavigate();
+
+    const date = new Date();
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const fullDate = `${year}-${month < 10 ? '0' + month : month}-${day < 10 ? '0' + day : day}`;
 
     const [fullName, setFullName] = useState('');
     const [email, setEmail] = useState('');
@@ -45,6 +53,8 @@ const RegistrationForm = (props) => {
             }
     
             props.onRegistration(userToRegister);
+        } else {
+            toast.warn('All fields required')
         }
     }
 
@@ -90,7 +100,8 @@ const RegistrationForm = (props) => {
                             name='dateOfBirth'
                             type='date'
                             placeholder=''
-                            value={birthDate} />
+                            value={birthDate}
+                            max={fullDate} />
                     </div>
                     <div className="registration-form__inputs__sub">
                         <SelectInput label='Country*' onValuePick={handleCityPick} values={props.cities} />
@@ -122,6 +133,7 @@ const RegistrationForm = (props) => {
                 <p className="registration-form__register">Already have account? 
                     <span onClick={() => navigate('/login')} className="registration-form__register__span"> Login now</span>
                 </p>
+                <ToastContainer />
             </form>
         </>
     );

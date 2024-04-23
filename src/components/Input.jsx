@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import '../style/Input.scss'
 
 const Input = (props) => {
@@ -20,6 +20,7 @@ const Input = (props) => {
                 value={props.value}
                 pattern={props.pattern}
                 title={props.title}
+                max={props.max}
                 autoComplete="off"
                 required />
             { isValid ? '' : <p className="input-section__error">{props.error}</p> }

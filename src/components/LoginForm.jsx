@@ -2,6 +2,8 @@ import React from "react";
 import { useState } from "react";
 import '../style/LoginForm.scss'
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Input from "./Input";
 
 
@@ -19,7 +21,7 @@ const LoginForm = (props) => {
             setEmail('');
             setPassword('');
         }else {
-            console.log('ne more')
+            toast.warn('All fields required')
         }
 
     }
@@ -47,6 +49,7 @@ const LoginForm = (props) => {
                 <p className="login-form__register">Don't have account? 
                     <span onClick={() => navigate('/register')} className="login-form__register__span"> Register now</span>
                 </p>
+                <ToastContainer />
             </div>
         </form>
         </>
