@@ -51,7 +51,6 @@ const RegistrationForm = (props) => {
                     "name": city
                 }
             }
-    
             props.onRegistration(userToRegister);
         } else {
             toast.warn('All fields required')
@@ -104,7 +103,7 @@ const RegistrationForm = (props) => {
                             max={fullDate} />
                     </div>
                     <div className="registration-form__inputs__sub">
-                        <SelectInput label='Country*' onValuePick={handleCityPick} values={props.cities} />
+                        <SelectInput label='City*' onValuePick={handleCityPick} values={props.cities} />
                         <Input
                             setValue={setStreetName}
                             label='Street name*'

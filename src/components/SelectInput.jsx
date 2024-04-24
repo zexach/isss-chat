@@ -13,6 +13,7 @@ const SelectInput = (props) => {
         <div className="select-input">
             <label className="select-input__label" htmlFor="option">{props.label}</label>
             <select onChange={handleValuePick} className="select-input__select" name="option" required>
+                <option value="">Select an option</option>
                 { props.values ? 
                     props.values.map(
                         (value) => 
