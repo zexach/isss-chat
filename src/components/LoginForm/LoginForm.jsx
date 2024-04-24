@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
-import '../style/LoginForm.scss'
+import './LoginForm.scss'
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Input from "./Input";
+import Input from "../Input/Input";
 
 
 const LoginForm = (props) => {

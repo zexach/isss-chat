@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import './style/App.scss'
-import LoginPage from './pages/LoginPage'
+import LoginPage from './pages/LoginPage/LoginPage.jsx'
 import Dashboard from './pages/Dashboard'
 import AuthProvider from './hooks/AuthProvider.jsx'
 import PrivateRoute from './router/PrivateRoute.jsx'
-import RegistrationPage from './pages/RegistrationPage.jsx'
+import RegistrationPage from './pages/RegistrationPage/RegistrationPage.jsx'
 
 const App = () => {
 

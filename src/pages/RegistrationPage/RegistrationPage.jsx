@@ -1,10 +1,10 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import RegistrationForm from '../components/RegistrationForm'
-import '../style/RegistrationPage.scss'
+import RegistrationForm from '../../components/RegistrationForm/RegistrationForm'
+import './RegistrationPage.scss'
 import axios from "axios";
-import { useAuth } from "../hooks/AuthProvider";
+import { useAuth } from "../../hooks/AuthProvider";
 
 const RegistrationPage = () => {
 

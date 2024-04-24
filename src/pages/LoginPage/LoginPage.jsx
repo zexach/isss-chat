@@ -1,7 +1,7 @@
 import React from "react";
-import LoginForm from "../components/LoginForm";
-import '../style/LoginPage.scss'
-import { useAuth } from "../hooks/AuthProvider";
+import LoginForm from "../../components/LoginForm/LoginForm";
+import './LoginPage.scss'
+import { useAuth } from "../../hooks/AuthProvider";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 

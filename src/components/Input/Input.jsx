@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import '../style/Input.scss'
+import './Input.scss'
 
 const Input = (props) => {
 
@@ -13,7 +13,7 @@ const Input = (props) => {
             <input 
                 className={`input-section__input ${isValid ? '' : 'invalid'} `} 
                 onChange={(e) => props.setValue(e.target.value)}
-                onBlur={(e) => {props.isValid ? setIsValid(props.isValid(e.target.value)) : ''}}
+                onBlur={(e) => {props.checkIsValid ? setIsValid(props.checkIsValid(e.target.value)) : ''}}
                 name={props.name}
                 type={props.type}
                 placeholder={props.placeholder}

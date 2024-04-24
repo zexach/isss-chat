@@ -1,6 +1,5 @@
 import React from "react";
-import { useState } from "react";
-import '../style/SelectInput.scss'
+import './SelectInput.scss'
 
 const SelectInput = (props) => {
 

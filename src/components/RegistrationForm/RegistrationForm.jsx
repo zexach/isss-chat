@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from "react";
-import '../style/RegistrationForm.scss'
+import './RegistrationForm.scss'
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import Input from "./Input";
-import SelectInput from "./SelectInput";
-import { NameValidator, EmailValidator, PasswordValidator } from "../validators/Validators";
+import Input from "../Input/Input";
+import SelectInput from "../SelectInput/SelectInput";
+import { NameValidator, EmailValidator, PasswordValidator } from "../../validators/Validators";
 
 const RegistrationForm = (props) => {
 
@@ -60,12 +60,12 @@ const RegistrationForm = (props) => {
     return(
         <>
             <form className="registration-form" onSubmit={handleLogin} noValidate>
-                <h1 className="registration-form__header">Register</h1>
+                <h1 className="registration-form__header">Sign up</h1>
                 <div className="registration-form__inputs">
                     <div className="registration-form__inputs__sub">
                         <Input
                             setValue={setFullName}
-                            isValid={NameValidator}
+                            checkIsValid={NameValidator}
                             label='Full name*'
                             name='fullName'
                             type='text'
@@ -75,7 +75,7 @@ const RegistrationForm = (props) => {
                             value={fullName} />
                         <Input
                             setValue={setEmail}
-                            isValid={EmailValidator}
+                            checkIsValid={EmailValidator}
                             label='Email*'
                             name='email'
                             type='email'
@@ -85,7 +85,7 @@ const RegistrationForm = (props) => {
                             value={email} />
                         <Input
                             setValue={setPassword}
-                            isValid={PasswordValidator}
+                            checkIsValid={PasswordValidator}
                             label='Password*'
                             name='password'
                             type='password'
@@ -103,7 +103,10 @@ const RegistrationForm = (props) => {
                             max={fullDate} />
                     </div>
                     <div className="registration-form__inputs__sub">
-                        <SelectInput label='City*' onValuePick={handleCityPick} values={props.cities} />
+                        <SelectInput 
+                            label='City*' 
+                            onValuePick={handleCityPick} 
+                            values={props.cities} />
                         <Input
                             setValue={setStreetName}
                             label='Street name*'
@@ -128,7 +131,7 @@ const RegistrationForm = (props) => {
                     </div>
                 </div>
 
-                <button className="registration-form__button" type="submit">Register</button>
+                <button className="registration-form__button" type="submit">Sign up</button>
                 <p className="registration-form__register">Already have account? 
                     <span onClick={() => navigate('/login')} className="registration-form__register__span"> Login now</span>
                 </p>
